@@ -10,13 +10,11 @@ Java assignments.
 │   ├── Lab 1...
 │   └── ...
 │
-├── pseudocodes/
-│   ├── Module1.docx
-│   └── ...
-│
 └── src/main/java/com/thisgary/ 
     ├── lab/
-    │   ├── Module1.java
+    │   ├── module1
+    │   │   ├── Lab1.java
+    │   │   └── ...
     │   └── ...
     │
     └── library/
