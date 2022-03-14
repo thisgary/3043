@@ -1,4 +1,4 @@
-package com.thisgary.lab;
+package com.thisgary.lab.module1;
 
 import com.thisgary.lab.module1.Account;
 import com.thisgary.lab.module1.Arithmetic;

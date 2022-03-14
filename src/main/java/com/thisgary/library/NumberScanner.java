@@ -3,15 +3,21 @@ package com.thisgary.library;
 import java.util.Scanner;
 import java.util.function.Function;
 
-// An attempt to modularize GetNumber.scan()
+// An object orientation of GetNumber.scan()
 public class NumberScanner implements GNInterface {
-    public String question = "Input? ";
-    public String onError = "Invalid input!";
-    public Function<Number, Boolean> rules = NO_RULES;
+    private String onError;
+    private Function<Number, Boolean> rules;
+    private boolean persistent;
 
-    Scanner s = new Scanner(System.in);
+    // Constructors
+    public NumberScanner(boolean persistent) {
+        this.onError = "Invalid input!";
+        this.rules = NO_RULES;
+        this.persistent = persistent;
+    }
 
     public NumberScanner() {
+        this(true);
     }
 
     public NumberScanner(String onError, Function<Number, Boolean> rules) {
@@ -19,39 +25,35 @@ public class NumberScanner implements GNInterface {
         this.rules = rules;
     }
 
-    public NumberScanner(String question, String onError, Function<Number, Boolean> rules) {
-        this.question = question;
+    public NumberScanner(String onError, Function<Number, Boolean> rules, boolean persistent) {
+        this(onError, rules);
+        this.persistent = persistent;
+    }
+
+    // Setters
+    public void setOnError(String onError) {
         this.onError = onError;
+    }
+
+    public void setRules(Function<Number, Boolean> rules) {
         this.rules = rules;
     }
 
-    public String getString() {
-        System.out.print(this.question);
-        return s.nextLine();
-    }
-
+    // Interface methods
     public String getString(String question) {
         System.out.print(question);
-        return s.nextLine();
+        return new Scanner(System.in).nextLine();
     }
 
     public void onError(Exception e) {
         System.out.println(onError);
     }
 
-    public Number get() {
-        return get(this.question, this.rules);
-    }
-
     public Number get(String question) {
         return get(question, this.rules);
     }
 
-    public Integer getInt() {
-        Function<Number, Boolean> rules = (n) -> n.intValue() == n.doubleValue() && this.rules.apply(n);
-        return get(this.question, rules).intValue();
-    }
-
+    // Extra methods
     public Integer getInt(String question) {
         Function<Number, Boolean> rules = (n) -> n.intValue() == n.doubleValue() && this.rules.apply(n);
         return get(question, rules).intValue();

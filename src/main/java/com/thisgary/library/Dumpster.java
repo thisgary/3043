@@ -34,7 +34,7 @@ public class Dumpster {
     // it exists
     public static void moduleActivity(int i) throws Throwable {
         // Get list of options in module i
-        final Class<?> CLASS = Class.forName("com.thisgary.lab.Module" + i);
+        final Class<?> CLASS = Class.forName("com.thisgary.lab.module" + i + ".Module" + i);
         final Method[] METHODS = CLASS.getDeclaredMethods();
 
         // List options in module i
