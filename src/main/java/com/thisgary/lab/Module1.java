@@ -60,7 +60,7 @@ public class Module1 {
         System.out.println("Enter second integer : ");
         number2 = input.nextInt();
 
-        Arithmetic arithmetic = new Arithmetic(number1, number2);
+        Activity2 arithmetic = new Activity2(number1, number2);
 
         System.out.printf("\nAddition is %d\n", arithmetic.addition());
         System.out.printf("Difference is %d\n", arithmetic.subtraction());
@@ -131,11 +131,11 @@ public class Module1 {
     }
 }
 
-class Arithmetic {
+class Activity2 {
     private int number1;
     private int number2;
 
-    public Arithmetic(int number1, int number2) {
+    public Activity2(int number1, int number2) {
         this.number1 = number1;
         this.number2 = number2;
     }
