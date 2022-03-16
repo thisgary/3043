@@ -1,9 +1,5 @@
 package com.thisgary.lab.module1;
 
-import com.thisgary.lab.module1.Account;
-import com.thisgary.lab.module1.Arithmetic;
-import com.thisgary.lab.module1.GradeBook;
-import com.thisgary.lab.module1.Rectangle;
 import com.thisgary.library.Dumpster;
 import com.thisgary.library.NumberScanner;
 
@@ -11,10 +7,6 @@ import java.util.Scanner;
 import java.util.function.Function;
 
 public class Module1 {
-    public static void main(String[] args) throws Throwable {
-        Dumpster.moduleActivity(1);
-    }
-
 //    You have been assigned to write a program to perform an arithmetic addition and subtraction for two (2)
 //    integer numbers key-in by the user. The program should only accept the number key-in by the user as a
 //    positive number. Finally, display the result for addition and subtraction. You should write your program
@@ -103,7 +95,7 @@ public class Module1 {
 //    Step 1 – Declare a class Account and attributes.
 //    Step 2 – Create constructor
 //    Step 3 – Initialize the values of account number, name and balance via constructor
-//    Step 4 – Define getter and setter for each attributes
+//    Step 4 – Define getter and setter for each attribute
 //    Step 5 - Declare a class AccountTest.
 //    Step 6 – Instantiate Account class and display the account number, name and balance.
     public static void activity4() {
@@ -132,6 +124,10 @@ public class Module1 {
         System.out.print("Please enter the course name: ");
         gradeBook.setCourseName(new Scanner(System.in).nextLine());
         gradeBook.displayMessage();
+    }
+
+    public static void main(String[] args) throws Throwable {
+        Dumpster.moduleActivity(1);
     }
 }
 
