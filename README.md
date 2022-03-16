@@ -13,7 +13,7 @@ Java assignments.
 └── src/main/java/com/thisgary/ 
     ├── lab/
     │   ├── module1
-    │   │   ├── Lab1.java
+    │   │   ├── Test.java
     │   │   └── ...
     │   └── ...
     │

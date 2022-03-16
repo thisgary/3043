@@ -4,7 +4,7 @@ import com.thisgary.library.NumberScanner;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Module2 {
+public class Test {
     //    Write a program to display the message “Welcome to OOP class, person_name”. The name of person must
 //    be assigned through the constructor. In addition, the program should prompt message “CSF3043 – Object
 //    Oriented Programming”, when you execute the default constructor. Run your program using default

@@ -25,7 +25,7 @@ public class Modules {
             int i = GetNumber.jopInt(MODULES, "Lab modules", "Module does not exist", MODULE_EXISTS_RULE);
 
             // List all methods
-            Class c = Class.forName("com.thisgary.lab.module" + i + ".Module" + i);
+            Class c = Class.forName("com.thisgary.lab.module" + i + ".Test");
             Method[] methods = c.getDeclaredMethods();
 
             // List all activities

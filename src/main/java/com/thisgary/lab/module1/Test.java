@@ -5,7 +5,7 @@ import com.thisgary.library.NumberScanner;
 import java.util.Scanner;
 import java.util.function.Function;
 
-public class Module1 {
+public class Test {
 //    You have been assigned to write a program to perform an arithmetic addition and subtraction for two (2)
 //    integer numbers key-in by the user. The program should only accept the number key-in by the user as a
 //    positive number. Finally, display the result for addition and subtraction. You should write your program
