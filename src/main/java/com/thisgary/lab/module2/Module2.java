@@ -1,19 +1,11 @@
 package com.thisgary.lab.module2;
 
-import com.thisgary.lab.module2.Student;
-import com.thisgary.lab.module2.TicketSale;
-import com.thisgary.lab.module2.Vehicle;
-import com.thisgary.lab.module2.Welcome;
 import com.thisgary.library.Dumpster;
 import com.thisgary.library.NumberScanner;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Module2 {
-    public static void main(String[] args) throws Throwable {
-        Dumpster.moduleActivity(2);
-    }
-
     //    Write a program to display the message “Welcome to OOP class, person_name”. The name of person must
 //    be assigned through the constructor. In addition, the program should prompt message “CSF3043 – Object
 //    Oriented Programming”, when you execute the default constructor. Run your program using default
@@ -60,9 +52,9 @@ public class Module2 {
         System.out.println("Integer: " + i);
     }
 
-//    You need to write the program to calculate the total ticket sales of a concert. There are three types of seating:
+    //    You need to write the program to calculate the total ticket sales of a concert. There are three types of seating:
 //    A, B and C. The program must accept the number of tickets sold and the price of a ticket for each of the three
-//    types of seats. The total sales are computed as follow:
+//    types of seats. The total sales are computed as follows:
 //    totalSales = numberofA_Seats * pricePerA_Seat +
 //    numberofB_Seats * pricePerB_Seat +
 //    numberofC_Seats * pricePerC_Seat
@@ -75,14 +67,11 @@ public class Module2 {
                 r.nextDouble(100, 1000),
                 r.nextDouble(100, 1000));
         ticketSale.calculateTotalSales(r.nextInt(100), r.nextInt(100), r.nextInt(100));
-        double totalSales = ticketSale.getTotalSales();
-        System.out.printf("Price of A: %.2f\n", ticketSale.getPricePerA_Seat());
-        System.out.printf("Price of B: %.2f\n", ticketSale.getPricePerB_Seat());
-        System.out.printf("Price of C: %.2f\n\n", ticketSale.getPricePerC_Seat());
-        System.out.printf("Seats of A: %d\n", ticketSale.getNumberOfA_Seats());
-        System.out.printf("Seats of B: %d\n", ticketSale.getNumberOfB_Seats());
-        System.out.printf("Seats of C: %d\n\n", ticketSale.getNumberOfC_Seats());
-        System.out.printf("Total sales: %.2f\n\n", totalSales);
+        ticketSale.overview();
+    }
+
+    public static void main(String[] args) throws Throwable {
+        Dumpster.moduleActivity(2);
     }
 }
 

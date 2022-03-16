@@ -74,4 +74,14 @@ public class TicketSale {
     public double getTotalSales() {
         return this.totalSales;
     }
+
+    public void overview() {
+        System.out.printf("Price of A: %.2f\n", this.pricePerA_Seat);
+        System.out.printf("Price of B: %.2f\n", this.pricePerB_Seat);
+        System.out.printf("Price of C: %.2f\n\n", this.pricePerC_Seat);
+        System.out.printf("Seats of A: %d\n", this.numberOfA_Seats);
+        System.out.printf("Seats of B: %d\n", this.numberOfB_Seats);
+        System.out.printf("Seats of C: %d\n\n", this.numberOfC_Seats);
+        System.out.printf("Total sales: %.2f\n\n", this.totalSales);
+    }
 }
