@@ -2,7 +2,7 @@ package com.thisgary.library;
 
 import java.util.function.Function;
 
-public interface GNInterface {
+public interface NumberGetter {
     // Predefined values
     public static Function<Number, Boolean> NO_RULES = (Number n) -> true;
 

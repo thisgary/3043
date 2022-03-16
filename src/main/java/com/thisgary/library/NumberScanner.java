@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.function.Function;
 
 // An object orientation of GetNumber.scan()
-public class NumberScanner implements GNInterface {
+public class NumberScanner implements NumberGetter {
     private String onError;
     private Function<Number, Boolean> rules;
     private boolean persistent;

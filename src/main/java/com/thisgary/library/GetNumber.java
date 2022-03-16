@@ -4,13 +4,13 @@ import javax.swing.JOptionPane;
 import java.util.Scanner;
 import java.util.function.Function;
 
-import static com.thisgary.library.GNInterface.NO_RULES;
+import static com.thisgary.library.NumberGetter.NO_RULES;
 
 public class GetNumber {
     // From console
     public static Number scan(String question, String onError, Function<Number, Boolean> rules) {
         Scanner s = new Scanner(System.in);
-        GNInterface ng = new GNInterface() {
+        NumberGetter ng = new NumberGetter() {
             public String getString(String question) {
                 System.out.print(question);
                 return s.nextLine();
@@ -50,7 +50,7 @@ public class GetNumber {
             String onError,
             Function<Number, Boolean> rules
     ) {
-        GNInterface ng = new GNInterface() {
+        NumberGetter ng = new NumberGetter() {
             public String getString(String question) {
                 String input = JOptionPane.showInputDialog(
                         null,
