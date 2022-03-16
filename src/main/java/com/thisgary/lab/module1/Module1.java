@@ -1,6 +1,5 @@
 package com.thisgary.lab.module1;
 
-import com.thisgary.library.Dumpster;
 import com.thisgary.library.NumberScanner;
 
 import java.util.Scanner;
@@ -124,10 +123,6 @@ public class Module1 {
         System.out.print("Please enter the course name: ");
         gradeBook.setCourseName(new Scanner(System.in).nextLine());
         gradeBook.displayMessage();
-    }
-
-    public static void main(String[] args) throws Throwable {
-        Dumpster.moduleActivity(1);
     }
 }
 

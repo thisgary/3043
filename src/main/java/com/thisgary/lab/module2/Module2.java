@@ -1,6 +1,5 @@
 package com.thisgary.lab.module2;
 
-import com.thisgary.library.Dumpster;
 import com.thisgary.library.NumberScanner;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -68,10 +67,6 @@ public class Module2 {
                 r.nextDouble(100, 1000));
         ticketSale.calculateTotalSales(r.nextInt(100), r.nextInt(100), r.nextInt(100));
         ticketSale.overview();
-    }
-
-    public static void main(String[] args) throws Throwable {
-        Dumpster.moduleActivity(2);
     }
 }
 
