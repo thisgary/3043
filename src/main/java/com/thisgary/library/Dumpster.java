@@ -57,7 +57,7 @@ public class Dumpster {
             } else {
                 JOptionPane.showMessageDialog(
                         null,
-                        "Activity" + choice + "() does not exist in Module" + i,
+                        "activity" + choice + "() does not exist in Module" + i,
                         "Error",
                         JOptionPane.ERROR_MESSAGE
                 );
