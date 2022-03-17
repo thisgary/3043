@@ -16,10 +16,10 @@ public class Dumpster {
         );
     }
 
-    public static boolean isDate(String DMY) {
-        int y = Integer.parseInt(DMY.substring(0, 2));
-        int d = Integer.parseInt(DMY.substring(4, 6));
-        int m = Integer.parseInt(DMY.substring(2, 4));
+    public static boolean isDate(String YMD) {
+        int y = Integer.parseInt(YMD.substring(0, 2));
+        int d = Integer.parseInt(YMD.substring(4, 6));
+        int m = Integer.parseInt(YMD.substring(2, 4));
         if (m > 12 || m < 1) return false;
         int maxDay = dayInMonth(m, y);
         return d >= 1 && d <= maxDay;
