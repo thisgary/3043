@@ -1,11 +1,12 @@
 package com.thisgary.lab;
 
+import com.thisgary.library.Dumpster;
 import com.thisgary.library.GetNumber;
 
 import java.io.File;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -24,28 +25,7 @@ public class Modules {
             final Function<Number, Boolean> MODULE_EXISTS_RULE = (n) -> directories.contains("" + n.intValue());
             int i = GetNumber.jopInt(MODULES, "Lab modules", "Module does not exist", MODULE_EXISTS_RULE);
 
-            // List all methods
-            Class c = Class.forName("com.thisgary.lab.module" + i + ".Test");
-            Method[] methods = c.getDeclaredMethods();
-
-            // List all activities
-            List<String> activities = Arrays.stream(methods)
-                    .map(method -> method.getName())
-                    .map(n -> n.startsWith("activity") ? n.substring(8) : null)
-                    .filter(n -> n != null)
-                    .sorted()
-                    .collect(Collectors.toList());
-
-            // Find the activity
-            final String ACTIVITIES = "Activities: " + String.join(", ", activities);
-            final Function<Number, Boolean> ACTIVITY_EXISTS_RULE = (n) -> activities.contains("" + n.intValue());
-            int choice = GetNumber.jopInt(
-                    ACTIVITIES, "Lab Module " + i, "Activity does not exist", ACTIVITY_EXISTS_RULE
-            );
-
-            // Run the activity
-            Method activity = c.getMethod("activity" + choice, (Class<?>[]) null);
-            activity.invoke(null, (Object[]) null);
+            Dumpster.testModule(i);
         }
     }
 }

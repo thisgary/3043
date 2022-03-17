@@ -1,6 +1,10 @@
 package com.thisgary.library;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Dumpster {
     public static int dayInMonth(int m, int y) {
@@ -21,9 +25,34 @@ public class Dumpster {
     }
 
     // prototype public static void method invoker
-    public static void PSVInvoker(String packageClassName, String methodName) throws Throwable {
+    public static void psvInvoker(String packageClassName, String methodName) throws Throwable {
         Method m = Class.forName(packageClassName).getMethod(methodName, (Class<?>[]) null);
         m.invoke(null, (Object[]) null);
+    }
+
+    public static void testModule(int i) throws Throwable {
+        // List all methods
+        Class c = Class.forName("com.thisgary.lab.module" + i + ".Test");
+        Method[] methods = c.getDeclaredMethods();
+
+        // List all activities
+        List<String> activities = Arrays.stream(methods)
+                .map(method -> method.getName()) // get method name
+                .map(n -> n.startsWith("activity") ? n.substring(8) : null) // check if it is activity
+                .filter(n -> n != null) // filter unmatched (null)
+                .sorted()
+                .collect(Collectors.toList());
+
+        // Find the activity
+        final String ACTIVITIES = "Activities: " + String.join(", ", activities);
+        final Function<Number, Boolean> ACTIVITY_EXISTS_RULE = (n) -> activities.contains("" + n.intValue());
+        int choice = GetNumber.jopInt(
+                ACTIVITIES, "Lab Module " + i, "Activity does not exist", ACTIVITY_EXISTS_RULE
+        );
+
+        // Run the activity
+        Method activity = c.getMethod("activity" + choice, (Class<?>[]) null);
+        activity.invoke(null, (Object[]) null);
     }
 
     public static String repeat(int length, String that) {

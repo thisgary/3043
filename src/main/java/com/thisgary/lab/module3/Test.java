@@ -1,5 +1,6 @@
 package com.thisgary.lab.module3;
 
+import com.thisgary.library.Dumpster;
 import com.thisgary.library.NumberScanner;
 
 public class Test {
@@ -28,5 +29,9 @@ public class Test {
         Transaction transaction = new Transaction(10021, "Abdul Rahman", 'S');
         transaction.addTransactionDate(12, 8, 2011);
         transaction.overview();
+    }
+
+    public static void main(String[] args) throws Throwable {
+        Dumpster.testModule(3);
     }
 }
