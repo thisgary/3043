@@ -7,7 +7,7 @@ public class Test {
     public static void activity1() {
         Date date = new Date(31, 12, 2019);
         Employee employee = new Employee("John", "CSF3043", date);
-        System.out.println(employee.toString());
+        System.out.println(employee);
     }
 
     public static void activity2() {
@@ -17,7 +17,7 @@ public class Test {
 
     public static void activity3() {
         NumberScanner scanner = new NumberScanner();
-        Double miles = scanner.get("Enter the distance in miles: ").doubleValue();
+        double miles = scanner.get("Enter the distance in miles: ").doubleValue();
         Distance distance = new Distance(miles);
         distance.overview();
         miles = scanner.get("Enter the distance in miles: ").doubleValue();

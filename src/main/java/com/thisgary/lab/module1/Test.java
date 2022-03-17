@@ -7,11 +7,10 @@ import java.util.Scanner;
 import java.util.function.Function;
 
 public class Test {
-//    You have been assigned to write a program to perform an arithmetic addition and subtraction for two (2)
+    //    You have been assigned to write a program to perform an arithmetic addition and subtraction for two (2)
 //    integer numbers key-in by the user. The program should only accept the number key-in by the user as a
 //    positive number. Finally, display the result for addition and subtraction. You should write your program
 //    using an object-oriented approach.
-
     public static void activity0() {
         System.out.println("Enter two numbers to add and subtract:");
         Function<Number, Boolean> rules = n -> n.intValue() > 0;
@@ -23,16 +22,16 @@ public class Test {
     }
 
     public static void activity1() {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int number1;
         int number2;
 
         System.out.println("Enter first integer  : ");
-        number1 = input.nextInt();
+        number1 = scanner.nextInt();
 
         System.out.println("Enter second integer : ");
-        number2 = input.nextInt();
+        number2 = scanner.nextInt();
 
         if (number1 < 0 || number2 < 0) {
             number1 = 0;
@@ -45,16 +44,16 @@ public class Test {
     }
 
     public static void activity2() {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int number1;
         int number2;
 
         System.out.println("Enter first integer  : ");
-        number1 = input.nextInt();
+        number1 = scanner.nextInt();
 
         System.out.println("Enter second integer : ");
-        number2 = input.nextInt();
+        number2 = scanner.nextInt();
 
         Arithmetic arithmetic = new Arithmetic(number1, number2);
 

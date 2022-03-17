@@ -15,7 +15,8 @@ public class Modules {
         while (true) {
             // List all modules
             File file = new File("./src/main/java/com/thisgary/lab/");
-            List<String> directories = Arrays.stream(file.list((p, c) -> new File(p, c).isDirectory()))
+            String[] ds = Objects.requireNonNull(file.list((p, c) -> new File(p, c).isDirectory()));
+            List<String> directories = Arrays.stream(ds)
                     .map(name -> name.substring(6))
                     .sorted()
                     .collect(Collectors.toList());

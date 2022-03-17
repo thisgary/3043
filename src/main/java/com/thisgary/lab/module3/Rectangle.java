@@ -14,8 +14,8 @@ v. Compile the program Rectangle and main program. Briefly explain your result.
 vi. If there is an errors, how to fix it. Why the errors occur during the compilation?
  */
 public class Rectangle {
-    private int length;
-    private int width;
+    private final int length;
+    private final int width;
 
     public Rectangle(int length, int width) {
         this.length = length;

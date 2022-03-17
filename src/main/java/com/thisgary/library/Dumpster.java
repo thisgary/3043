@@ -3,6 +3,7 @@ package com.thisgary.library;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -15,10 +16,10 @@ public class Dumpster {
         );
     }
 
-    public static boolean isDate(String yymmdd) {
-        int y = Integer.parseInt(yymmdd.substring(0, 2));
-        int d = Integer.parseInt(yymmdd.substring(4, 6));
-        int m = Integer.parseInt(yymmdd.substring(2, 4));
+    public static boolean isDate(String DMY) {
+        int y = Integer.parseInt(DMY.substring(0, 2));
+        int d = Integer.parseInt(DMY.substring(4, 6));
+        int m = Integer.parseInt(DMY.substring(2, 4));
         if (m > 12 || m < 1) return false;
         int maxDay = dayInMonth(m, y);
         return d >= 1 && d <= maxDay;
@@ -32,14 +33,14 @@ public class Dumpster {
 
     public static void testModule(int i) throws Throwable {
         // List all methods
-        Class c = Class.forName("com.thisgary.lab.module" + i + ".Test");
+        Class<?> c = Class.forName("com.thisgary.lab.module" + i + ".Test");
         Method[] methods = c.getDeclaredMethods();
 
         // List all activities
         List<String> activities = Arrays.stream(methods)
-                .map(method -> method.getName()) // get method name
+                .map(Method::getName) // get method name
                 .map(n -> n.startsWith("activity") ? n.substring(8) : null) // check if it is activity
-                .filter(n -> n != null) // filter unmatched (null)
+                .filter(Objects::nonNull) // filter unmatched (null)
                 .sorted()
                 .collect(Collectors.toList());
 

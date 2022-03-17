@@ -3,15 +3,15 @@ package com.thisgary.lab.module3;
 import com.thisgary.library.Dumpster;
 
 public class Date {
-    private int day;
-    private int month;
-    private int year;
+    private final int day;
+    private final int month;
+    private final int year;
 
     public Date(int day, int month, int year) {
         this.day = checkDay(year, month, day);
         this.month = checkMonth(month);
         this.year = checkYear(year);
-        System.out.printf("Date object constructor for %s\n", toString());
+        System.out.printf("Date object constructor for %s\n", this);
     }
 
     private int checkDay(int year, int month, int day) {
