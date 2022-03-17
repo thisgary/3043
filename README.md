@@ -12,6 +12,7 @@ Java assignments.
 │
 └── src/main/java/com/thisgary/ 
     ├── lab/
+    │   ├── Modules.java
     │   ├── module1
     │   │   ├── Test.java
     │   │   └── ...
@@ -35,8 +36,12 @@ Contains the project's source code.
 
 ## Packages
 
-`com.thisgary.lab` - Lab Module assignments.
+`com.thisgary.lab` - 
+Lab Module assignments. 
+Run `Module.java` to test the assignment.
+Alternatively, run `Test.java` to test the module.
 
 `com.thisgary.library` - 
 Contain commonly used methods ~~(not really)~~. 
-Can be anti-pattern at times (e.g. `PSVInvoker`), blame author.
+Can be anti-pattern at times (e.g. `PSVInvoker`), 
+blame author.
