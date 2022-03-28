@@ -2,51 +2,50 @@ package com.thisgary.lab.module2;
 
 // Activity 2
 public class Vehicle {
-    private String VehicleType;
-    private int ChassisNo;
-    private int ProductionYear;
+    private String vehicleType;
+    private int chassisNo, productionYear;
 
-    public Vehicle() {
+    public Vehicle() { // Don't ask
         System.out.println("Vehicle Information");
     }
 
-    public Vehicle(String VehicleType, int ChassisNo) {
-        this.VehicleType = VehicleType;
-        this.ChassisNo = ChassisNo;
+    public Vehicle(String vehicleType, int chassisNo) {
+        this.vehicleType = vehicleType;
+        this.chassisNo = chassisNo;
     }
 
-    public Vehicle(String VehicleType, int ChassisNo, int ProductionYear) {
-        this(VehicleType, ChassisNo);
-        this.ProductionYear = ProductionYear;
+    public Vehicle(String vehicleType, int chassisNo, int productionYear) {
+        this(vehicleType, chassisNo);
+        this.productionYear = productionYear;
     }
 
     public String getVehicleType() {
-        return VehicleType;
+        return vehicleType;
     }
 
     public int getChassisNo() {
-        return ChassisNo;
+        return chassisNo;
     }
 
     public int getProductionYear() {
-        return ProductionYear;
+        return productionYear;
     }
 
-    public void setVehicleType(String VehicleType) {
-        this.VehicleType = VehicleType;
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
-    public void setChassisNo(int ChassisNo) {
-        this.ChassisNo = ChassisNo;
+    public void setChassisNo(int chassisNo) {
+        this.chassisNo = chassisNo;
     }
 
-    public void setProductionYear(int ProductionYear) {
-        this.ProductionYear = ProductionYear;
+    public void setProductionYear(int productionYear) {
+        this.productionYear = productionYear;
     }
 
     public void overview() {
-        System.out.println("Vehicle Type: " + this.VehicleType);
-        System.out.println("Chassis No: " + this.ChassisNo);
-        System.out.println("Production Year: " + this.ProductionYear + "\n");
+        System.out.println("Vehicle Type   : " + this.vehicleType);
+        System.out.println("Chassis No     : " + this.chassisNo);
+        System.out.println("Production Year: " + this.productionYear + "\n");
     }
 }

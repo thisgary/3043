@@ -1,6 +1,18 @@
 package com.thisgary.lab.module2;
 
-// Activity 5
+/*
+Activity 5
+----------
+You need to write the program to calculate the total ticket sales of a concert. There are three types of seating:
+A, B and C. The program must accept the number of tickets sold and the price of a ticket for each of the three
+types of seats. The total sales are computed as follows:
+totalSales = numberofA_Seats * pricePerA_Seat +
+numberofB_Seats * pricePerB_Seat +
+numberofC_Seats * pricePerC_Seat
+Write a class called Ticket Sale and use a class called TicketSaleTest to run the program and display total sales
+for ticket A, B and C. Finally display total sales of the ticket
+ */
+
 public class TicketSale {
     private final double pricePerA_Seat;
     private final double pricePerB_Seat;

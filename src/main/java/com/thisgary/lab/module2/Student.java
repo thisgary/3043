@@ -1,6 +1,16 @@
 package com.thisgary.lab.module2;
 
-// Activity 3
+// 
+
+/*
+Activity 3
+----------
+The Student() class consists of attribute such as student id, name, and status. The status can be
+assigned either active or suspend. Your program must have minimum three (3) constructors, that will behave
+differently when the program is executed at runtime. Create the main program and display the student name,
+course and his/her status.
+ */
+
 public class Student {
     private String studentId;
     private String studentName;
