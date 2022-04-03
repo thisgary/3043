@@ -1,7 +1,5 @@
 package com.thisgary.lab.module2;
 
-// 
-
 /*
 Activity 3
 ----------
