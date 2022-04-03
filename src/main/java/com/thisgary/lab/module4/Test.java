@@ -62,7 +62,7 @@ public class Test {
         bookSales.overview();
     }
 
-    public static void main(String[] args) throws Throwable {
+    public static void main(String[] args) {
         Dumpster.testModule(4);
     }
 }

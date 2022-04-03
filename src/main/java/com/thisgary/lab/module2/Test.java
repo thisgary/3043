@@ -52,7 +52,7 @@ public class Test {
         ticketSale.overview();
     }
 
-    public static void main(String[] args) throws Throwable {
+    public static void main(String[] args) {
         Dumpster.testModule(2);
     }
 }

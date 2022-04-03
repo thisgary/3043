@@ -31,29 +31,39 @@ public class Dumpster {
         m.invoke(null, (Object[]) null);
     }
 
-    public static void testModule(int i) throws Throwable {
-        // List all methods
-        Class<?> c = Class.forName("com.thisgary.lab.module" + i + ".Test");
-        Method[] methods = c.getDeclaredMethods();
+    public static void testModule(int i) {
+        try {
+            // List all methods
+            Class<?> cls = Class.forName("com.thisgary.lab.module" + i + ".Test");
+            Method[] methods = cls.getDeclaredMethods();
 
-        // List all activities
-        List<String> activities = Arrays.stream(methods)
-                .map(Method::getName) // get method name
-                .map(n -> n.startsWith("activity") ? n.substring(8) : null) // check if it is activity
-                .filter(Objects::nonNull) // filter unmatched (null)
-                .sorted()
-                .collect(Collectors.toList());
+            // List all activities
+            List<String> activities = Arrays.stream(methods)
+                    .map(Method::getName) // get method name
+                    .map(n -> n.startsWith("activity") ? n.substring(8) : null) // check if it is activity
+                    .filter(Objects::nonNull) // filter unmatched (null)
+                    .sorted()
+                    .collect(Collectors.toList());
 
-        // Find the activity
-        final String ACTIVITIES = "Activities: " + String.join(", ", activities);
-        final Function<Number, Boolean> ACTIVITY_EXISTS_RULE = (n) -> activities.contains("" + n.intValue());
-        int choice = GetNumber.jopInt(
-                ACTIVITIES, "Lab Module " + i, "Activity does not exist", ACTIVITY_EXISTS_RULE
-        );
+            while (true) {
+                // Find the activity
+                final String ACTIVITIES = "Activities: " + String.join(", ", activities);
+                final Function<Number, Boolean> ACTIVITY_EXISTS_RULE = (n) -> activities.contains("" + n.intValue());
+                int choice = GetNumber.jopInt(
+                        ACTIVITIES, "Lab Module " + i, "Activity does not exist", ACTIVITY_EXISTS_RULE
+                );
 
-        // Run the activity
-        Method activity = c.getMethod("activity" + choice, (Class<?>[]) null);
-        activity.invoke(null, (Object[]) null);
+                // Run the activity
+                Method activity = cls.getMethod("activity" + choice, (Class<?>[]) null);
+                try { // Non-breaking exception
+                    activity.invoke(null, (Object[]) null);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (ClassNotFoundException | NoSuchMethodException e) {
+            System.out.println("Should not happen.");
+        }
     }
 
     public static String repeat(int length, String that) {

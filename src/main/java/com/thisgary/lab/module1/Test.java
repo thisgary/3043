@@ -125,7 +125,7 @@ public class Test {
         gradeBook.displayMessage();
     }
 
-    public static void main(String[] args) throws Throwable {
+    public static void main(String[] args) {
         Dumpster.testModule(1);
     }
 }

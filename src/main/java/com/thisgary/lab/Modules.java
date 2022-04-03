@@ -11,7 +11,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Modules {
-    public static void main(String[] args) throws Throwable {
+    public static void main(String[] args) {
         while (true) {
             // List all modules
             File file = new File("./src/main/java/com/thisgary/lab/");
