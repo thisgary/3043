@@ -1,7 +1,6 @@
 package com.thisgary.lab.module4;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /*
 Activity 5

@@ -7,12 +7,12 @@ public class Test {
     public static void activity1() {
         Date date = new Date(31, 12, 2019);
         Employee employee = new Employee("John", "CSF3043", date);
-        System.out.println(employee);
+        System.out.println(employee + "\n");
     }
 
     public static void activity2() {
         Rectangle rectangle = new Rectangle(4, 2);
-        System.out.printf("The area of rectangle is %d", rectangle.calculateArea());
+        System.out.printf("The area of rectangle is %d\n\n", rectangle.calculateArea());
     }
 
     public static void activity3() {

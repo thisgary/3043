@@ -1,7 +1,6 @@
 package com.thisgary.lab.module4;
 
 import com.thisgary.lab.module3.Date;
-import com.thisgary.library.GetNumber;
 import com.thisgary.library.NumberScanner;
 
 import java.util.Scanner;

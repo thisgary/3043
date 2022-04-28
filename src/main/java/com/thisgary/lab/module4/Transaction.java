@@ -47,8 +47,9 @@ public class Transaction {
 
     public void overview() {
         System.out.println("Account Owner     : " + whoThis);
+        System.out.println("Account Number    : " + accountNumber);
         System.out.println("Transaction type  : " + transactionType);
         System.out.println("Transaction number: " + transactionNumber);
-        System.out.printf("Remaining Balance : RM%.2f\n\n", balance);
+        System.out.printf("Remaining Balance  : RM%.2f\n\n", balance);
     }
 }

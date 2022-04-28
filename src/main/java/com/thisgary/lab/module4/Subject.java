@@ -15,6 +15,12 @@ Details of enum declaration consist of following information:
 
 The constructor for enum Subject has a signature of subject name and course name
 The enum Subject has a getter for subject name and course name
+
+For testing purposes, create new main class known as SubjectEnumTest() and write the following
+implementation to test the enum Subject:
+1. Display all the subjects.
+2. Display the subject between subject code CSE3501 to CSE3503.
+3. Display the subject code CSE3502 and CSE3504.
  */
 
 public enum Subject {
@@ -33,7 +39,7 @@ public enum Subject {
         this.departmentCode = departmentCode;
     }
 
-    public void overview() {
-        System.out.println(subjectName + ", " + departmentCode);
+    public String toString() {
+         return subjectName + ", " + departmentCode;
     }
 }
