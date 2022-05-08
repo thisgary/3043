@@ -1,5 +1,13 @@
 package com.thisgary.lab.module6;
 
+/*
+Activity 3
+----------
+Write a simple program by using final class and method to calculate the commission of selling the
+magazine for company XYZ Sdn. Bhd. The commission rate is MYR2.50 per selling magazine. Your
+output should include person name, number of magazine sold and the commission amount.
+ */
+
 public final class Commission {
     private final String name;
     private final int megazines;

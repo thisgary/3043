@@ -1,5 +1,13 @@
 package com.thisgary.lab.module6;
 
+/*
+Activity 1
+----------
+Shape has the following requirements:
+- Name of the shape
+- A method to calculate area that returns a default as 0.0f
+ */
+
 public class Shape {
     private String name;
 

@@ -1,5 +1,14 @@
 package com.thisgary.lab.module6;
 
+/*
+Activity 2
+----------
+The Java Consultant class has the following requirements:
+- Has a number of working days and a salary rate as MYR800.00 per day.
+- Has a method to calculate and display salary. The salary is based on number of working days
+  x salary rate per day.
+ */
+
 public class JavaConsultant extends Consultant {
     private int workingDays;
 

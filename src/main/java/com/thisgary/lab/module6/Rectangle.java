@@ -1,5 +1,13 @@
 package com.thisgary.lab.module6;
 
+/*
+Activity 1
+----------
+Rectangle has the following requirements:
+- Has width and length
+- A method to calculate area of rectangle as width x length
+ */
+
 public class Rectangle extends Shape {
     private double width, length;
 

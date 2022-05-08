@@ -1,5 +1,13 @@
 package com.thisgary.lab.module6;
 
+/*
+Activity 1
+----------
+Circle has the following requirements:
+- Has a radius
+- Has a method to calculate area of circle as 3.14 x radius x radius
+ */
+
 public class Circle extends Shape {
     private double radius;
 

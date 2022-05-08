@@ -1,5 +1,19 @@
 package com.thisgary.lab.module6;
 
+/*
+Activity 2
+----------
+The Consultant class has the following requirements:
+- Consultant name, company and age.
+- A method to display details of consultant.
+  This method consists of two (2) different implementation:
+    First implementation – will display consultant name and company.
+    Second implementation – will display consultant name, company and age.
+                            The value of age is obtained through parameter passing.
+- Has an abstract method for calculate and displaying salary.
+  The salary is based on MYR800.00 per working day.
+ */
+
 public abstract class Consultant {
     private String name, company;
     private int age;
