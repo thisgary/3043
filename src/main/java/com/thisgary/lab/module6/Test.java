@@ -11,11 +11,13 @@ public class Test {
     }
 
     public static void activity2() {
-
+        JavaConsultant javaConsultant = new JavaConsultant("Ben", "Smith", 69, 420);
+        System.out.println(javaConsultant);
     }
 
     public static void activity3() {
-
+        Commission commission = new Commission("Ali", 69);
+        System.out.println(commission);
     }
 
     public static void activity4() {
