@@ -1,5 +1,7 @@
 package com.thisgary.lab.module5;
 
+import com.thisgary.lab.module6.Address;
+
 import java.util.Date;
 
 // I don't want to make 100 files for this
@@ -7,11 +9,19 @@ import java.util.Date;
 public class Person {
     private String name;
     private String address;
+    private Address objAddress;
     private String phone;
 
     public Person(String name, String address, String phone) {
         this.name = name;
         this.address = address;
+        this.phone = phone;
+    }
+
+    public Person(String name, Address address, String phone) {
+        this.name = name;
+        this.address = address.toString();
+        this.objAddress = address;
         this.phone = phone;
     }
 
@@ -21,6 +31,10 @@ public class Person {
 
     public String getAddress() {
         return address;
+    }
+
+    public Address getObjAddress() {
+        return objAddress;
     }
 
     public String getPhone() {
@@ -33,6 +47,11 @@ public class Person {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void setObjAddress(Address address) {
+        this.address = address.toString();
+        this.objAddress = address;
     }
 
     public void setPhone(String phone) {

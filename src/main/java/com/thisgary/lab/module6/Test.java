@@ -1,5 +1,6 @@
 package com.thisgary.lab.module6;
 
+import com.thisgary.lab.module3.Date;
 import com.thisgary.library.Dumpster;
 
 public class Test {
@@ -50,8 +51,42 @@ public class Test {
         System.out.println(transaction3);
     }
 
+    /*
+    Using classes, design an online address book to keep track of the names, addresses, phone numbers,
+    and birthdays of family members, close friends, and certain business associates. Your program should
+    be able to handle a maximum of 500 entries.
+     */
     public static void activity5() {
+        Date testDate = new Date(1, 1, 2000);
+        Address testAddress = new Address("123 Main St", "San Francisco", "CA", "94105");
+        AddressBook addressBook = new AddressBook();
 
+        System.out.println("1. Test adding new entries");
+        addressBook.addFamily("John", testAddress, "123-456-7890", testDate, "Father");
+        System.out.println("\n" + addressBook);
+        addressBook.addFamily("Mary", testAddress, "123-456-7890", testDate, "Mother");
+        testAddress.setStreet("456 Main St");
+        addressBook.addFriend("Bob", testAddress, "123-456-7890", testDate, "I hate this person");
+        System.out.println("\n" + addressBook);
+        System.out.println("See they are working\n");
+
+        System.out.println("2. Test sorting entries");
+        testAddress.setCity("Los Angeles");
+        addressBook.addBusinessAssociate(
+                "Ali", testAddress, "123-456-7890",
+                testDate, "Google", "Software Engineer");
+        System.out.println("\n" + addressBook);
+        addressBook.sortByName();
+        System.out.println(addressBook);
+        System.out.println("Sorted this thing by name\n");
+
+        System.out.println("3. Test removing entries");
+        addressBook.removeContactByName("John");
+        System.out.println("\n" + addressBook);
+
+        System.out.println("4. Category check");
+        for (ExtPerson person : addressBook.getContacts())
+            System.out.println(person.getName() + " is " + person.getCategory());
     }
 
     public static void main(String[] args) {
