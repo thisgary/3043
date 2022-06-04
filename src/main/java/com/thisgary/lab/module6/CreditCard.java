@@ -50,12 +50,10 @@ public class CreditCard implements Payment {
     }
 
     public String toString() {
-        return new StringBuilder()
-                .append("Number: " + creditCardNumber)
-                .append(", Date: " + transactionDate)
-                .append(", Description: " + transactionDescription)
-                .append(", Amount: " + transactionAmount)
-                .append(", Month Total: " + totalAmount)
-                .toString();
+        return "Number: " + creditCardNumber +
+                ", Date: " + transactionDate +
+                ", Description: " + transactionDescription +
+                ", Amount: " + transactionAmount +
+                ", Month Total: " + totalAmount;
     }
 }

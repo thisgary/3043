@@ -14,6 +14,7 @@ public class JavaConsultant extends Consultant {
 
     public JavaConsultant(String name, String company, int age, int workingDays) {
         super(name, company, age);
+        System.out.println("Java Consultant constructor called.");
         this.workingDays = workingDays;
     }
 

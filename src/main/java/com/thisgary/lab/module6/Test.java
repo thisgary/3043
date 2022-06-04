@@ -47,7 +47,8 @@ public class Test {
         CreditCard transaction2 = new CreditCard(
                 "123456789", "02/01/2020", "Kek", 200);
         System.out.println(transaction2);
-        CreditCard transaction3 = new CreditCard("123456789", "01/02/2020", "Lol", 100);
+        CreditCard transaction3 = new CreditCard(
+                "123456789", "01/02/2020", "Lol", 100);
         System.out.println(transaction3);
     }
 
@@ -79,6 +80,9 @@ public class Test {
         addressBook.sortByName();
         System.out.println(addressBook);
         System.out.println("Sorted this thing by name\n");
+        addressBook.sortByCategory();
+        System.out.println(addressBook);
+        System.out.println("Sorted this thing by category\n");
 
         System.out.println("3. Test removing entries");
         addressBook.removeContactByName("John");
@@ -87,6 +91,8 @@ public class Test {
         System.out.println("4. Category check");
         for (ExtPerson person : addressBook.getContacts())
             System.out.println(person.getName() + " is " + person.getCategory());
+        System.out.println("\nPeople with category 'Family':\n");
+        for (ExtPerson person : addressBook.getContactsByCategory("Family")) System.out.println(person);
     }
 
     public static void main(String[] args) {

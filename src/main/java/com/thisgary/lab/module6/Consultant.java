@@ -19,6 +19,7 @@ public abstract class Consultant {
     private int age;
 
     public Consultant(String name, String company, int age) {
+        System.out.println("Consultant constructor called.");
         this.name = name;
         this.company = company;
         this.age = age;
