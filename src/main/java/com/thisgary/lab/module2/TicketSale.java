@@ -13,6 +13,8 @@ Write a class called Ticket Sale and use a class called TicketSaleTest to run th
 for ticket A, B and C. Finally display total sales of the ticket
  */
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class TicketSale {
     private final double pricePerA_Seat;
     private final double pricePerB_Seat;
@@ -95,5 +97,15 @@ public class TicketSale {
         System.out.printf("Seats of B: %d\n", this.numberOfB_Seats);
         System.out.printf("Seats of C: %d\n\n", this.numberOfC_Seats);
         System.out.printf("Total sales: %.2f\n\n", this.totalSales);
+    }
+
+    public static void main(String[] args) {
+        ThreadLocalRandom r = ThreadLocalRandom.current();
+        TicketSale ticketSale = new TicketSale(
+                r.nextDouble(100, 1000),
+                r.nextDouble(100, 1000),
+                r.nextDouble(100, 1000));
+        ticketSale.calculateTotalSales(r.nextInt(100), r.nextInt(100), r.nextInt(100));
+        ticketSale.overview();
     }
 }

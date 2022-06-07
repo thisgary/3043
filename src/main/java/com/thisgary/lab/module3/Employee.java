@@ -47,4 +47,10 @@ public class Employee {
     public String toString() {
         return "Employee[name=" + name + ", employeeId=" + employeeId + ", hireDate=" + hireDate + "]";
     }
+
+    public static void main(String[] args) {
+        Date date = new Date(31, 12, 2019);
+        Employee employee = new Employee("John", "CSF3043", date);
+        System.out.println(employee + "\n");
+    }
 }

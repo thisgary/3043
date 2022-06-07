@@ -20,6 +20,7 @@ public class Student {
     }
 
     public Student(String studentId) {
+        super();
         this.studentId = studentId;
     }
 
@@ -58,9 +59,13 @@ public class Student {
     }
 
     public void overview() {
-        new Student();
         System.out.println("Student ID: " + this.studentId);
         System.out.println("Student Name: " + this.studentName);
         System.out.println("Student Status: " + this.studentStatus + "\n");
+    }
+
+    public static void main(String[] args) {
+        Student student = new Student("CSF3043", "Abdul Rahman", "active");
+        student.overview();
     }
 }

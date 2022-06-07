@@ -15,6 +15,7 @@ The transaction date has a Date class. Write the main program to display:
 i. The transaction for account = “10021”, account holder = “Abdul Rahman”
 ii. The transaction for account = “10021”, account holder = “Abdul Rahman” and transaction date = “12 Aug 2011”
  */
+
 public class Transaction {
     private int accountNumber;
     private String accountName;
@@ -48,5 +49,11 @@ public class Transaction {
         System.out.printf("Account name   : %s\n", accountName);
         System.out.printf("Account type   : %s\n", accountType);
         System.out.printf("Last transacted: %s\n\n", transactionDates.get(transactionDates.size() - 1).toString());
+    }
+
+    public static void main(String[] args) {
+        Transaction transaction = new Transaction(10021, "Abdul Rahman", 'S');
+        transaction.addTransactionDate(12, 8, 2011);
+        transaction.overview();
     }
 }

@@ -81,4 +81,10 @@ public class BookSales {
         System.out.println("Discount: " + getDiscount());
         System.out.println("Net Total: " + getNetTotal());
     }
+
+    public static void main(String[] args) {
+        BookSales bookSales = new BookSales('A', true, 69);
+        bookSales.overview();
+        System.out.println("");
+    }
 }

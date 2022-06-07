@@ -10,6 +10,8 @@ takes place.Use this qualifier to differentiate the assignment of each of variab
 Note:1mile=1.609344 km
  */
 
+import com.thisgary.library.NumberScanner;
+
 public class Distance {
     private double miles;
     private double km;
@@ -37,5 +39,15 @@ public class Distance {
     public void overview() {
         System.out.println("The distance in miles is " + miles);
         System.out.println("The distance in kilometers is " + getKm() + "\n");
+    }
+
+    public static void main(String[] args) {
+        NumberScanner scanner = new NumberScanner();
+        double miles = scanner.get("Enter the distance in miles: ").doubleValue();
+        Distance distance = new Distance(miles);
+        distance.overview();
+        miles = scanner.get("Enter the distance in miles: ").doubleValue();
+        distance.setMiles(miles);
+        distance.overview();
     }
 }

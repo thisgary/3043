@@ -52,4 +52,13 @@ public class Transaction {
         System.out.println("Transaction number: " + transactionNumber);
         System.out.printf("Remaining Balance  : RM%.2f\n\n", balance);
     }
+
+    public static void main(String[] args) {
+        Transaction transaction1 = new Transaction("Ali", 1002, 'W', 400);
+        transaction1.overview();
+        Transaction transaction2 = new Transaction("Ali", 1002, 'D', 100);
+        transaction2.overview();
+        Transaction transaction3 = new Transaction("Ali", 1002, 'W', 600);
+        transaction3.overview();
+    }
 }

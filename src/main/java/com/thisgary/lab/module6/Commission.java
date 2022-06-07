@@ -32,4 +32,9 @@ public final class Commission {
     public String toString() {
         return "Name: " + name + ", Commission: RM2.5 * " + megazines + " = RM" + getCommission();
     }
+
+    public static void main(String[] args) {
+        Commission commission = new Commission("Ali", 69);
+        System.out.println(commission);
+    }
 }

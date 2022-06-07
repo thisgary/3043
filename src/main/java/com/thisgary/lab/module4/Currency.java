@@ -8,6 +8,8 @@ Write a program to convert the currency from Malaysian Ringgit (MYR) to Pounds S
 display the conversion.
  */
 
+import com.thisgary.library.GetNumber;
+
 public class Currency {
     private double myr;
     private double pound;
@@ -19,5 +21,11 @@ public class Currency {
 
     public double getPound() {
         return pound;
+    }
+
+    public static void main(String[] args) {
+        double myr = GetNumber.scanDouble("MYR: ");
+        Currency currency = new Currency(myr);
+        System.out.println("Pound: " + currency.getPound() + "\n");
     }
 }

@@ -32,4 +32,9 @@ public class Welcome {
         System.out.println("CSF3043 - Object Oriented Programming");
         System.out.println("Welcome to OOP class, " + this.name + "\n");
     }
+
+    public static void main(String[] args) {
+        Welcome welcome = new Welcome("Abdul Rahman");
+        welcome.overview();
+    }
 }

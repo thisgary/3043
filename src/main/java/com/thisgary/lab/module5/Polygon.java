@@ -16,6 +16,8 @@ Editor note
 In other news, I want to experiment on the class that can only have one instance.
  */
 
+import java.util.Arrays;
+
 public class Polygon {
     private static Polygon existingInstance;
     private Coordinate[] coordinates;
@@ -55,5 +57,70 @@ public class Polygon {
     public void flush() {
         existingInstance = null;
         coordinates = null;
+    }
+
+    public static void main(String[] args) {
+        Coordinate[] coordinates = {
+                new Coordinate(0, 0), new Coordinate(0, 2),
+                new Coordinate(5, 2), new Coordinate(5, 0)
+        };
+        Rectangle myRectangle = new Rectangle(coordinates);
+        System.out.println(myRectangle);
+
+        myRectangle.flush();
+
+        coordinates[2].setX(2);
+        coordinates[3].setX(2);
+
+        Square mySquare = new Square(coordinates);
+        System.out.println(mySquare);
+    }
+}
+
+class Rectangle extends Polygon {
+    public Rectangle(Coordinate[] coordinates) {
+        super(coordinates);
+        isRectangle(coordinates);
+    }
+
+    private static void isRectangle(Coordinate[] coordinates) {
+        assert coordinates.length == 4 : "Not a quadrilateral";
+
+        assert (coordinates[0].getY() + coordinates[1].getY() == coordinates[2].getY() - coordinates[3].getY() &&
+                coordinates[0].getX() + coordinates[1].getX() == coordinates[2].getX() - coordinates[3].getX())
+                : "Not a rectangle";
+    }
+
+    protected static double getDistance(Coordinate c1, Coordinate c2) {
+        return Math.sqrt(Math.pow(c1.getX() - c2.getX(), 2) + Math.pow(c1.getY() - c2.getY(), 2));
+    }
+
+    public String toString() {
+        Coordinate[] cs = getCoordinates();
+        double a = getDistance(cs[0], cs[1]), b = getDistance(cs[1], cs[2]);
+        return "This rectangle has a height of " + Math.max(a, b) +
+                ", a width of " + Math.min(a, b) + " and an area of " + getArea();
+    }
+}
+
+class Square extends Rectangle {
+    public Square(Coordinate[] coordinates) {
+        super(coordinates);
+        isSquare(coordinates);
+    }
+
+    protected static void isSquare(Coordinate[] cs) {
+        double[] sides = {
+                getDistance(cs[0], cs[1]),
+                getDistance(cs[1], cs[2]),
+                getDistance(cs[2], cs[3]),
+                getDistance(cs[3], cs[0])
+        };
+        assert Arrays.stream(sides).allMatch(side -> side == sides[0]) : "Not a square";
+    }
+
+    public String toString() {
+        Coordinate[] cs = getCoordinates();
+        return "This square has a side of " + getDistance(cs[0], cs[1]) + " and an area of " + getArea();
     }
 }

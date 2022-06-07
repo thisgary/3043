@@ -43,9 +43,28 @@ public class Employees {
     public String toString() {
         return String.format("%d - %s: %s, %.2f", id, name, type, salary);
     }
+
+    public static void main(String[] args) {
+        ContractEmployee john = new ContractEmployee(1, "John", 69);
+        PermanentEmployee cena = new PermanentEmployee(2, "Cena");
+        System.out.println(john);
+        System.out.println(cena);
+    }
 }
 
-// I know that it's better to keep 1 class per file but I'm lazy so...
+/*
+Activity 3
+----------
+Copy your solution in Activity 2 and paste into CSF3043 -> Lab – Chapter 5 -> Activity 3. Based on the
+solution you wrote in Activity 2, modify the common method double calculateEmpSalary() to calculate
+the salary as below:
+
+    Employee salary = basic salary
+
+In your Permanent Employee and Contract Employee’s class, rename the method to calculate salary as
+double calculateEmpSalary(). Create a main program as EmployeeTest and override the implementation
+of calculating salary at permanent and contract employee
+*/
 
 class PermanentEmployee extends Employees {
     public PermanentEmployee(int id, String name) {

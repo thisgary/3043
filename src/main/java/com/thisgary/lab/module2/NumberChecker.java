@@ -9,6 +9,8 @@ validate the string input key-in by user is number. If the input is string (a, b
 as “0”. Otherwise, display the error message. Finally, display the out of conversion.
  */
 
+import java.util.Scanner;
+
 public class NumberChecker {
     private String stringNumber;
     private int intNumber;
@@ -31,5 +33,16 @@ public class NumberChecker {
             System.out.println("String Number (Integer): " + intNumber);
             System.out.println("Integer Number (Double): " + (double) intNumber);
         }
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("String Numebr: ");
+        String stringNumber = s.nextLine();
+        System.out.println("Integer Number: ");
+        int intNumber = s.nextInt();
+
+        NumberChecker nc = new NumberChecker(stringNumber, intNumber);
+        nc.overview();
     }
 }

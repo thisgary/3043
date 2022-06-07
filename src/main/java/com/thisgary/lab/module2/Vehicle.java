@@ -1,5 +1,7 @@
 package com.thisgary.lab.module2;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 // Activity 2
 public class Vehicle {
     private String vehicleType;
@@ -47,5 +49,20 @@ public class Vehicle {
         System.out.println("Vehicle Type   : " + this.vehicleType);
         System.out.println("Chassis No     : " + this.chassisNo);
         System.out.println("Production Year: " + this.productionYear + "\n");
+    }
+
+    public static void main(String[] args) {
+        ThreadLocalRandom r = ThreadLocalRandom.current();
+        String[] vehicleTypes = {
+                "SEDAN", "COUPE", "SPORTS CAR", "STATION WAGON", "HATCHBACK", "CONVERTIBLE", "SUV", "MINIVAN"
+        };
+        int i = r.nextInt(10);
+        Vehicle vehicle = new Vehicle();
+        while (i-- > 0) {
+            vehicle.setVehicleType(vehicleTypes[r.nextInt(vehicleTypes.length)]);
+            vehicle.setChassisNo(r.nextInt(1000000, 9999999));
+            vehicle.setProductionYear(r.nextInt(1990, 2019));
+            vehicle.overview();
+        }
     }
 }

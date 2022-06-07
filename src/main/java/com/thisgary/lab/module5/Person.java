@@ -4,8 +4,6 @@ import com.thisgary.lab.module6.Address;
 
 import java.util.Date;
 
-// I don't want to make 100 files for this
-
 public class Person {
     private String name;
     private String address;
@@ -60,6 +58,20 @@ public class Person {
 
     public String toString() {
         return "Name: " + name + "\nAddress: " + address + "\nPhone: " + phone + "\n";
+    }
+
+    public static void main(String[] args) {
+        Person person = new Person("John", "17, George Road, 1140, George, Uganda", "123456789");
+        System.out.println(person);
+        Employee employee = new Employee("John", "17, George Road, 1140, George, Uganda", "123456789",
+                "123456789", "Astrology", "CEO", 8888, new Date());
+        System.out.println(employee);
+        Student student = new Student("John", "17, George Road, 1140, George, Uganda", "123456789",
+                "123456789", "Astrology", 2048);
+        System.out.println(student);
+        Alumni alumni = new Alumni("John", "17, George Road, 1140, George, Uganda", "123456789",
+                "123456789", "Astrology", 2048, new Date());
+        System.out.println(alumni);
     }
 }
 

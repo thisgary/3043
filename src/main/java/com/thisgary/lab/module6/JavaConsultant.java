@@ -7,6 +7,9 @@ The Java Consultant class has the following requirements:
 - Has a number of working days and a salary rate as MYR800.00 per day.
 - Has a method to calculate and display salary. The salary is based on number of working days
   x salary rate per day.
+
+Write a program to demonstrate the use of abstract class and method. In addition, show when
+the method overloading and overriding take place in your program.
  */
 
 public class JavaConsultant extends Consultant {
@@ -32,5 +35,10 @@ public class JavaConsultant extends Consultant {
 
     public String toString() {
         return super.toString() + ", Salary: " + workingDays + " * 800 = " + getSalary() + "\n";
+    }
+
+    public static void main(String[] args) {
+        JavaConsultant javaConsultant = new JavaConsultant("Ben", "Smith", 69, 420);
+        System.out.println(javaConsultant);
     }
 }

@@ -24,4 +24,10 @@ public class BirthDate {
     public void overview() {
         System.out.println("Hello " + this.name + ", your birth date is " + this.birthDate);
     }
+
+    public static void main(String[] args) {
+        BirthDate user = new BirthDate();
+        user.overview();
+        System.out.println("");
+    }
 }
