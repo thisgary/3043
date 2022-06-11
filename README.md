@@ -12,23 +12,14 @@ Java assignments.
 │
 └── src/main/java/com/thisgary/ 
     ├── lab/
-    │   ├── Modules.java
+    │   ├── Test.java
     │   ├── module1
-    │   │   ├── Test.java
     │   │   └── ...
     │   └── ...
     │
     └── library/
         └── ...
 ```
-
-### docs/
-
-Contains the project's requirements.
-
-### pseudocode/
-
-Contains the project's pseudocode.
 
 ### src/
 
@@ -44,3 +35,6 @@ Run `Test.java` to test the module.
 Contain commonly used ~~(not really)~~ methods. 
 Can be anti-pattern at times (e.g. `PSVInvoker`), 
 blame author.
+
+`com.thisgary.lab` -
+Lecture exercises.
