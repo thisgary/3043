@@ -38,10 +38,9 @@ Contains the project's source code.
 
 `com.thisgary.lab` - 
 Lab Module assignments. 
-Run `Module.java` to test the assignment.
-Alternatively, run `Test.java` to test the module.
+Run `Test.java` to test the module.
 
 `com.thisgary.library` - 
-Contain commonly used methods ~~(not really)~~. 
+Contain commonly used ~~(not really)~~ methods. 
 Can be anti-pattern at times (e.g. `PSVInvoker`), 
 blame author.
