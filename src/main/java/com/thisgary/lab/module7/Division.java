@@ -63,7 +63,7 @@ public class Division {
                 if (i > 3)
                     JOptionPane.showMessageDialog(
                             null, "", "Good Job", JOptionPane.ERROR_MESSAGE,
-                            new ImageIcon("src/main/resources/images/heh.jpg"));
+                            new ImageIcon("assets/img/heh.jpg"));
             }
         }
     }

@@ -2,9 +2,11 @@ package com.thisgary.lab.module8;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /* Exercise
-Create a simple GUI to change the type of font when end user point of specific radio button.
+Create b simple GUI to change the type of font when end user point of specific radio button.
  */
 
 public class Exercise extends JFrame {
@@ -25,22 +27,34 @@ public class Exercise extends JFrame {
 
         p2 = new JPanel();
 
-        a = new JRadioButton("Serif");
-        a.setSelected(true);
-        a.addActionListener(ae -> {
-            b.setSelected(false);
-            t.setFont(new Font(Font.SERIF, Font.PLAIN, 11));
+        a = new JRadioButton("Sans-serif");
+        a.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                a.setSelected(true);
+                t.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 12));
+            }
         });
+        a.addActionListener(ae -> t.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 12)));
         p2.add(a);
 
-        b = new JRadioButton("Sans-serif");
-        b.addActionListener(ae -> {
-            a.setSelected(false);
-            t.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 11));
+        b = new JRadioButton("Serif");
+        b.setSelected(true);
+        b.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                b.setSelected(true);
+                t.setFont(new Font(Font.SERIF, Font.PLAIN, 12));
+            }
         });
+        b.addActionListener(ae -> t.setFont(new Font(Font.SERIF, Font.PLAIN, 12)));
         p2.add(b);
 
         add(p2, BorderLayout.SOUTH);
+
+        ButtonGroup g = new ButtonGroup();
+        g.add(a);
+        g.add(b);
     }
     
     public static void main(String[] args) {
